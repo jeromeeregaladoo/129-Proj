@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *
  * @author Reymuel
  */
-public class BlockSearch 
+public class BlockSearch extends SearchPrototype
 {
  private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) 
  {                                             
@@ -40,49 +40,4 @@ public class BlockSearch
         jPanel1.repaint();
     }                                            
     
-    private void addToPanel(ArrayList<Lot> list, javax.swing.JPanel panel)
-    {
-        for (Lot item :list)
-        {
-            jPanel1.add(new LotRow(item));
-        }
-    }
-    
-    public String generateSubCond(String query, String cond, javax.swing.JTextField a)
-    {
-        String subcond="";
-        
-        if(!a.getText().isEmpty())
-        {
-        if(!query.contains(" WHERE"))
-        {query+=" WHERE";}
-        
-        subcond+=cond + a.getText() +" AND";
-        }
-        return subcond;
-    }
-    
-    public String generateSubCond(String query, String cond, javax.swing.JTextField min, javax.swing.JTextField max)
-    {
-        String subcond="";
-        
-        if(min.getText().isEmpty())
-        {min.setText("0");}
-        
-        if(max.getText().isEmpty())
-        {max.setText("999999999999");}
-        
-        if(Double.parseDouble(min.getText())<Double.parseDouble(max.getText()))
-        {
-        if(!query.contains("WHERE")){query+=" WHERE";}
-            subcond+=cond +" >=" + min.getText() +" AND" + cond + " <=" + max.getText() +" AND";
-        }
-        
-        else
-        {
-            subcond+=cond +" >=" + min.getText() +" AND";
-        }
-        return subcond;
-    }   
-
 }
