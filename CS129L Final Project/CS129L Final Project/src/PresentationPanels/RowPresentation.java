@@ -9,7 +9,7 @@ package PresentationPanels;
  *
  * @author nicht
  */
-public class RowPresentation extends javax.swing.JPanel {
+public class RowPresentation extends PresentationPrototype {
 
     /**
      * Creates new form RowPresentation

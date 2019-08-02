@@ -1,4 +1,5 @@
 package cs129l.pkgfinal.project.SearchFunctions;
+import PresentationPanels.RowPresentation;
 import cs129l.pkgfinal.project.Lot;
 import java.util.ArrayList;
 
@@ -269,7 +270,7 @@ public class LotSearchBlock extends SearchPrototype {
         if("AND".equals(query.substring(query.length()-3))){query=query.substring(0, query.length()-3);}
         System.out.println(query);
         ArrayList<Lot> lots = c.LotSearch(query);
-        Component[] components = jPanel1.getComponents();
+        Panel.Clear();
         for (Component component : components) {
             if(component instanceof LotRow)
             jPanel1.remove(component);
