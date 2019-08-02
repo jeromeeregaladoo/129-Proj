@@ -271,13 +271,6 @@ public class LotSearchBlock extends SearchPrototype {
         System.out.println(query);
         ArrayList<Lot> lots = c.LotSearch(query);
         Panel.Clear();
-        for (Component component : components) {
-            if(component instanceof LotRow)
-            jPanel1.remove(component);
-        }
-        addToPanel(lots,jPanel1);
-        jPanel1.revalidate();
-        jPanel1.repaint();
     }//GEN-LAST:event_SearchButton1ActionPerformed
 
 
