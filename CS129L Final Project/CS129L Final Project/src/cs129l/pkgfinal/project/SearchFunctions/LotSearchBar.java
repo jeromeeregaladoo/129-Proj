@@ -1,12 +1,10 @@
 package cs129l.pkgfinal.project.SearchFunctions;
-import PresentationPanels.RowPresentation;
 import cs129l.pkgfinal.project.Lot;
 import java.util.ArrayList;
 
-public class LotSearchBlock extends SearchPrototype {
-    RowPresentation Panel;
+public class LotSearchBar extends SearchPrototype {
     
-    public LotSearchBlock() {
+    public LotSearchBar() {
         initComponents();
     }
 
@@ -258,6 +256,7 @@ public class LotSearchBlock extends SearchPrototype {
         query += generateSubCond(query," TOTAL_COST",jTextField7,jTextField8);
         if("AND".equals(query.substring(query.length()-3))){query=query.substring(0, query.length()-3);}
         ArrayList<Lot> lots = c.LotSearch(query);
+        Panel.BuildRow(lots);
     }//GEN-LAST:event_SearchButtonActionPerformed
 
     private void SearchButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButton1ActionPerformed
