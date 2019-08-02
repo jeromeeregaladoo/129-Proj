@@ -28,12 +28,12 @@ public class LotSearchUI extends javax.swing.JPanel {
         String query ="SELECT * FROM LOT WHERE";
         query += generateSubCond(query," LOT_CODE LIKE",jTextField1);
         query += generateSubCond(query," BLOCK_CODE LIKE", jTextField2);
-        query += generateSubCond(query," BUYER_NAME LIKE", jTextField3);
-        query += generateSubCond(query," LOT_NAME LIKE", jTextField4);
-        query += generateSubCond(query," LOT_DESC LIKE",jTextField5);
-        query += generateSubCond(query," SQM", jTextField6);
-        query += generateSubCond(query," SQM_COST", jTextField7);
-        query += generateSubCond(query," TOTAL_COST", jTextField8);
+        query += generateSubCond(query," BUYER_NAME LIKE", jTextField4);
+        query += generateSubCond(query," LOT_NAME LIKE", jTextField5);
+        query += generateSubCond(query," LOT_DESC LIKE",jTextField6);
+        query += generateSubCond(query," SQM", jTextField7);
+        query += generateSubCond(query," SQM_COST", jTextField8);
+        query += generateSubCond(query," TOTAL_COST", jTextField9);
         
         if("AND".equals(query.substring(query.length()-3)))
         {query=query.substring(0, query.length()-3);}
@@ -124,9 +124,7 @@ public class LotSearchUI extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
 
         jTextField3.setText("jTextField3");
@@ -149,25 +147,21 @@ public class LotSearchUI extends javax.swing.JPanel {
 
         jTextField9.setText("jTextField9");
 
-        jLabel1.setText("Buyer Code");
+        jLabel1.setText("Lot Code");
 
-        jLabel2.setText("First");
+        jLabel2.setText("Buyer Code");
 
-        jLabel3.setText("Last");
+        jLabel3.setText("Buyer Name");
 
-        jLabel4.setText("Middle");
+        jLabel4.setText("Lot Desc");
 
-        jLabel5.setText("CP#");
+        jLabel5.setText("SQM");
 
-        jLabel6.setText("MI");
+        jLabel6.setText("Lot Name");
 
-        jLabel7.setText("Tel. #");
+        jLabel7.setText("SQM Cost");
 
-        jLabel8.setText("Age");
-
-        jLabel9.setText("Email");
-
-        jTextField10.setText("jTextField9");
+        jLabel9.setText("Total Cost");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -188,10 +182,6 @@ public class LotSearchUI extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel8)
-                            .addGap(54, 54, 54)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel9)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -217,11 +207,11 @@ public class LotSearchUI extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(SearchButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(SearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,10 +252,6 @@ public class LotSearchUI extends javax.swing.JPanel {
                             .addComponent(jLabel9)
                             .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
                         .addComponent(SearchButton)))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
@@ -281,11 +267,9 @@ public class LotSearchUI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
