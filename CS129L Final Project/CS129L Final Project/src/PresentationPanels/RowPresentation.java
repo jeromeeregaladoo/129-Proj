@@ -5,25 +5,12 @@ import cs129l.pkgfinal.project.Lot;
 import cs129l.pkgfinal.project.LotRow;
 
 public class RowPresentation extends PresentationPrototype {
-
+    RowFactory factory = new RowFactory();
     public RowPresentation() {
         initComponents();
     }
 
-    public void BuildRow(Object obj){
-        if( obj instanceof Lot){
-            Lot lot = Lot.class.cast(obj);
-            this.add(new LotRow(lot));
-        }/*else if(obj instanceof Buyer){
-            Buyer buyer = Buyer.class.cast(obj);
-            this.add(new LotRow(lot));                                  //implement BuyerRow, BlockRow first
-        }else if(obj instanceof Lot){
-            Lot lot = Lot.class.cast(obj);
-            this.add(new LotRow(lot));
-        }else if(){
-            
-        }*/
-    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -5,97 +5,45 @@
  */
 package cs129l.pkgfinal.project.SearchFunctions;
 
-import cs129l.pkgfinal.project.Lot;
-import cs129l.pkgfinal.project.LotRow;
+import PresentationPanels.RowPresentation;
+import cs129l.pkgfinal.project.Buyer;
+import cs129l.pkgfinal.project.SQLConn;
 import java.awt.Component;
 import java.util.ArrayList;
 
-/**
- *
- * @author Reymuel
- */
-public class BuyerSearchUI extends javax.swing.JPanel {
+public class BuyerSearchBar extends SearchPrototype {
 
-    /**
-     * Creates new form BlockSearchUI
-     */
-    public BuyerSearchUI() {
+    public BuyerSearchBar(RowPresentation Panel, SQLConn c) {
+        super(Panel,c);
         initComponents();
-    }
-    
-    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) 
+    }                                     
+ 
+ private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) 
  {                                             
-        String query ="SELECT * FROM BUYER WHERE";
-        query += generateSubCond(query," BUYER_CODE LIKE",jTextField1);
-        query += generateSubCond(query," F_NAME LIKE", jTextField2);
-        query += generateSubCond(query," L_NAME LIKE", jTextField4);
-        query += generateSubCond(query," MID_INIT LIKE", jTextField5);
-        query += generateSubCond(query," M_NAME LIKE",jTextField6);
-        query += generateSubCond(query," CP_NUM", jTextField7);
-        query += generateSubCond(query," TEL_NUM", jTextField8);
-        query += generateSubCond(query," EMAIL LIKE", jTextField9);
-        query += generateSubCond(query," AGE", jTextField10);
+        String query ="SELECT * FROM LOT WHERE";
+        query += generateSubCond(query," LOT_CODE LIKE",jTextField1);
+        query += generateSubCond(query," BLOCK_CODE LIKE", jTextField2);
+        query += generateSubCond(query," BUYER_NAME LIKE", jTextField3);
+        query += generateSubCond(query," LOT_NAME LIKE", jTextField4);
+        query += generateSubCond(query," LOT_DESC LIKE",jTextField5); //refactor to query for buyer
+        query += generateSubCond(query," SQM", jTextField6);
+        query += generateSubCond(query," SQM_COST", jTextField7);
+        query += generateSubCond(query," TOTAL_COST", jTextField8);
         
         if("AND".equals(query.substring(query.length()-3)))
         {query=query.substring(0, query.length()-3);}
-        
-        System.out.println(query);
-        ArrayList<Lot> lots = c.BuyerSearch(query);
-        Component[] components = jPanel1.getComponents();
-        
-        for (Component component : components) 
-        {
-            if(component instanceof BuyerSearch)
-            jPanel1.remove(component);  
-        }
-        addToPanel(lots,jPanel1);
-        jPanel1.revalidate();
-        jPanel1.repaint();
+        ArrayList<Buyer> lots = c.getBuyer(query);
+        addToPanel(lots);
     }                                            
     
-    private void addToPanel(ArrayList<Lot> list, javax.swing.JPanel panel)
-    {
-        for (Lot item :list)
+    private void addToPanel(ArrayList<Buyer> list){
+        Panel.Clear();
+        for (Buyer item :list)
         {
-            jPanel1.add(new LotRow(item));
+            Panel.BuildRow(item);
         }
-    }
-    
-    public String generateSubCond(String query, String cond, javax.swing.JTextField a)
-    {
-        String subcond="";
-        
-        if(!a.getText().isEmpty())
-        {
-        if(!query.contains(" WHERE"))
-        {query+=" WHERE";}
-        
-        subcond+=cond + a.getText() +" AND";
-        }
-        return subcond;
-    }
-    
-    public String generateSubCond(String query, String cond, javax.swing.JTextField min, javax.swing.JTextField max)
-    {
-        String subcond="";
-        
-        if(min.getText().isEmpty())
-        {min.setText("0");}
-        
-        if(max.getText().isEmpty())
-        {max.setText("999999999999");}
-        
-        if(Double.parseDouble(min.getText())<Double.parseDouble(max.getText()))
-        {
-        if(!query.contains("WHERE")){query+=" WHERE";}
-            subcond+=cond +" >=" + min.getText() +" AND" + cond + " <=" + max.getText() +" AND";
-        }
-        
-        else
-        {
-            subcond+=cond +" >=" + min.getText() +" AND";
-        }
-        return subcond;
+        Panel.revalidate();
+        Panel.repaint();
     }
     
     
@@ -169,11 +117,6 @@ public class BuyerSearchUI extends javax.swing.JPanel {
         jLabel9.setText("Email");
 
         jTextField10.setText("jTextField9");
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -224,9 +167,7 @@ public class BuyerSearchUI extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(SearchButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
@@ -278,10 +219,6 @@ public class BuyerSearchUI extends javax.swing.JPanel {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
