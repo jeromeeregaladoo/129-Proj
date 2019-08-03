@@ -5,7 +5,7 @@ import cs129l.pkgfinal.project.Lot;
 import cs129l.pkgfinal.project.LotRow;
 
 public class RowPresentation extends PresentationPrototype {
-    RowFactory factory = new RowFactory();
+    public RowFactory factory = new RowFactory();
     public RowPresentation() {
         initComponents();
     }

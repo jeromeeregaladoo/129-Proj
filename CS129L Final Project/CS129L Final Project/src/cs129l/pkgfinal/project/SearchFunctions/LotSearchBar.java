@@ -2,7 +2,7 @@
 package cs129l.pkgfinal.project.SearchFunctions;
 
 import PresentationPanels.RowPresentation;
-import cs129l.pkgfinal.project.Buyer;
+import cs129l.pkgfinal.project.Lot;
 import cs129l.pkgfinal.project.SQLConn;
 import java.util.ArrayList;
 
@@ -31,8 +31,9 @@ public class LotSearchBar extends SearchPrototype {
     }
     
     private void addToPanel(ArrayList<Lot> list){
+        Panel.Clear();
         for (Lot item :list){
-            Panel.BuildRow(item);
+            Panel.factory.BuildRow(item);
         }
         Panel.revalidate();
         Panel.repaint();

@@ -67,7 +67,7 @@ public class SearchPrototype extends javax.swing.JPanel {
     
     private void addToPanel(ArrayList<Object> list){
         for (Object item :list){
-            Panel.BuildRow(item);
+            Panel.factory.BuildRow(item);
         }
         Panel.revalidate();
         Panel.repaint();
