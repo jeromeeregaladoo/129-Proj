@@ -1,9 +1,7 @@
 package PresentationPanels;
 
 import cs129l.pkgfinal.project.SQLConn;
-import java.awt.Color;
 import java.awt.Component;
-import javax.swing.BorderFactory;
 
 public class PresentationPrototype extends javax.swing.JPanel {
     SQLConn c;

@@ -11,9 +11,9 @@ public class LotSearchPanel extends PresentationPrototype {
     public LotSearchPanel(SQLConn c) {
         super(c);
         this.setBackground(Color.decode("#D6D9DF"));
-        this.setSize(new Dimension(1080,480));
-        this.setMaximumSize(new Dimension(1080,480));
-        this.setPreferredSize(new Dimension(1080,480));
+        this.setSize(new Dimension(1080,600));
+        this.setMaximumSize(new Dimension(1080,600));
+        this.setPreferredSize(new Dimension(1080,600));
         this.setBorder(BorderFactory.createLineBorder(Color.decode("#C0C0C0"), 1));
         initComponents();
     }
