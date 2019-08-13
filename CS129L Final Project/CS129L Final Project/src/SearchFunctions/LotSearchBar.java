@@ -22,8 +22,9 @@ public class LotSearchBar extends SearchPrototype {
  {                                             
         String query ="SELECT * FROM LOT WHERE";
         query += generateSubCond(query," LOT_CODE LIKE",LotCode);
-        query += generateSubCond(query," BLOCK_CODE LIKE", BuyerCode);
-        query += generateSubCond(query," BUYER_CODE LIKE", BuyerName);
+        query += generateSubCond(query," BLOCK_CODE LIKE", BlockCode);
+        query += generateSubCond(query," BUYER_CODE LIKE", BuyerCode);
+        query += generateSubCond(query," BUYER_NAME LIKE", BuyerName);
         query += generateSubCond(query," LOT_NAME LIKE", LotName);
         query += generateSubCond(query," LOT_DESC LIKE",LotDesc);
         query += generateSubCond(query," SQM", SQMLowerBound, SQMUpperBound);
@@ -38,7 +39,7 @@ public class LotSearchBar extends SearchPrototype {
     
     private void addToPanel(ArrayList<Lot> list){
         Panel.Clear();
-        for (int n=0; n<list.size(); n++){
+        for (int n=1; n<list.size(); n++){
             Panel.add(Panel.factory.BuildRow(list.get(n)));
             //System.out.println("BuildRow proc firing on lot code "+ list.get(n).getLotCode());
         }
@@ -75,6 +76,8 @@ public class LotSearchBar extends SearchPrototype {
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        BlockCode = new javax.swing.JTextField();
 
         jTextField3.setText("jTextField3");
 
@@ -123,6 +126,8 @@ public class LotSearchBar extends SearchPrototype {
 
         jLabel11.setText("-");
 
+        jLabel12.setText("Block Code");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -137,7 +142,6 @@ public class LotSearchBar extends SearchPrototype {
                             .addComponent(jLabel3)
                             .addComponent(jLabel6)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel1)
                             .addComponent(jLabel5)
                             .addComponent(jLabel9)
                             .addComponent(jLabel7))
@@ -145,7 +149,7 @@ public class LotSearchBar extends SearchPrototype {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(SQMCostLowerBound, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(SQMCostUpperBound, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,18 +159,28 @@ public class LotSearchBar extends SearchPrototype {
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(SQMUpperBound, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(LotCode)
-                            .addComponent(BuyerCode)
-                            .addComponent(BuyerName)
-                            .addComponent(LotName)
                             .addComponent(LotDesc)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(TotalCostLowerBound, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TotalCostUpperBound, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(19, 19, 19))
+                                .addComponent(TotalCostUpperBound, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BuyerCode, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(LotName)
+                            .addComponent(BuyerName)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(LotCode))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(BlockCode)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +189,11 @@ public class LotSearchBar extends SearchPrototype {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(LotCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(BlockCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(BuyerCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -212,7 +230,7 @@ public class LotSearchBar extends SearchPrototype {
                         .addComponent(jLabel11)))
                 .addGap(18, 18, 18)
                 .addComponent(SearchButton)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -222,6 +240,7 @@ public class LotSearchBar extends SearchPrototype {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField BlockCode;
     private javax.swing.JTextField BuyerCode;
     private javax.swing.JTextField BuyerName;
     private javax.swing.JTextField LotCode;
@@ -237,6 +256,7 @@ public class LotSearchBar extends SearchPrototype {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

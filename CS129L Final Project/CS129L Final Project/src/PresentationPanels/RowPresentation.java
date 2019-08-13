@@ -11,10 +11,10 @@ public class RowPresentation extends PresentationPrototype {
     public RowFactory factory = new RowFactory();
     public RowPresentation() {
         super();
+        this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
         initComponents();
         this.setBackground(Color.decode("#FFFFFF"));
         this.setBorder(BorderFactory.createLineBorder(Color.decode("#000000"), 2));
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setSize(new Dimension(604,604));
         this.setMaximumSize(new Dimension(604,604));
         this.setPreferredSize(new Dimension(604,604));

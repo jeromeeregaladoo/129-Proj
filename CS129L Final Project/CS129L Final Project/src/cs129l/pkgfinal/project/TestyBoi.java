@@ -24,11 +24,11 @@ public class TestyBoi extends javax.swing.JFrame {
         this.setLayout(new FlowLayout());
         this.setSize(1080, 720);
         this.setVisible(true);
-        //RowPresentation test1 = new RowPresentation();
+        RowPresentation test1 = new RowPresentation();
         SQLConn c = new SQLConn();
-        this.add(new LotSearchPanel(c));
-        //this.add(new LotSearchBar(test1,c ));
-        //this.add(test1);
+        //this.add(new LotSearchPanel(c));
+        this.add(new LotSearchBar(test1,c ));
+        this.add(test1);
     }
 
     /**

@@ -1,15 +1,13 @@
 package cs129l.pkgfinal.project;
 import PresentationPanels.LotSearchPanel;
-import Rows_and_UIs.LotRow;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.util.ArrayList;
+import javax.swing.BoxLayout;
 public class MainFrame extends javax.swing.JFrame {
     
     SQLConn c=new SQLConn();
     public MainFrame() {
         initComponents();
-        this.add(new LotSearchPanel(c));
         this.setSize(new Dimension(1280,600));
         this.setMaximumSize(new Dimension(1280,600));
         this.setPreferredSize(new Dimension(1280,600));
