@@ -27,19 +27,19 @@ public class LotRow extends RowPrototype {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText(lot.getLotCode());
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 46, 25));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 20));
 
         jLabel2.setText(lot.getBlockCode());
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 5, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, -6, 90, 30));
 
         jLabel3.setText(lot.getLotName());
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 5, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -6, 190, 30));
 
         jLabel4.setText(Double.toString(lot.getSqm()));
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 5, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, -6, 80, 30));
 
         jLabel5.setText(Double.toString(lot.getTotalCost()));
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 5, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, -6, 130, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked

@@ -1,4 +1,4 @@
-package cs129l.pkgfinal.project.SearchFunctions;
+package SearchFunctions;
 
 import PresentationPanels.RowPresentation;
 import cs129l.pkgfinal.project.SQLConn;

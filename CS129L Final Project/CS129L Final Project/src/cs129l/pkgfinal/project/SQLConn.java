@@ -28,6 +28,7 @@ public class SQLConn {
             st=c.createStatement();
             t = st.executeQuery(query);
             while (t.next()){
+            temp= new Lot();
             temp.setLotCode(t.getString(1));
             temp.setBlockCode(t.getString(2));
             temp.setBuyerCode(t.getString(3));
@@ -37,6 +38,7 @@ public class SQLConn {
             temp.setSqmCost(t.getDouble(7));
             temp.setTotalCost(t.getDouble(8));
             lots.add(temp);
+            //System.out.println("lot added in SQLConn with code " + temp.getLotCode());
             //lots.get(lots.lastIndexOf(temp)).LotDebugPrint();
             }
             st.close(); t.close(); c.close();

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cs129l.pkgfinal.project.SearchFunctions;
+package SearchFunctions;
 
 import PresentationPanels.RowPresentation;
 import DataStructs.Buyer;

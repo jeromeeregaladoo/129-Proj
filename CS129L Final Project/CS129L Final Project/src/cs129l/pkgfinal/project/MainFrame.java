@@ -236,13 +236,6 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        jPanel1.add(new LotRow(testLot));
-        this.revalidate();
-        this.repaint();
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    
     private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
         String query ="SELECT * FROM LOT WHERE";
         query += generateSubCond(query," LOT_CODE LIKE",jTextField1);
@@ -256,7 +249,7 @@ public class MainFrame extends javax.swing.JFrame {
         Component[] components = jPanel1.getComponents();
         for (Component component : components) {
             if(component instanceof LotRow)
-        jPanel1.remove(component);  
+            jPanel1.remove(component);
         }
         addToPanel(lots,jPanel1);
         jPanel1.revalidate();
@@ -266,7 +259,14 @@ public class MainFrame extends javax.swing.JFrame {
     private void jScrollBar1AdjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {//GEN-FIRST:event_jScrollBar1AdjustmentValueChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_jScrollBar1AdjustmentValueChanged
-    
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        jPanel1.add(new LotRow(testLot));
+        this.revalidate();
+        this.repaint();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+        
     private void addToPanel(ArrayList<Lot> list, javax.swing.JPanel panel){
         for (Lot item :list){
             jPanel1.add(new LotRow(item));

@@ -1,16 +1,22 @@
 package PresentationPanels;
 
+import cs129l.pkgfinal.project.SQLConn;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.BorderFactory;
 
 public class PresentationPrototype extends javax.swing.JPanel {
-
+    SQLConn c;
+    
     public PresentationPrototype() {
+        this.c=null;
         initComponents();
         this.setVisible(true);
-        this.setBackground(Color.decode("#FFFFFF"));
-        this.setBorder(BorderFactory.createLineBorder(Color.decode("#000000"), 2));
+    }
+    public PresentationPrototype(SQLConn c) {
+        this.c=c;
+        initComponents();
+        this.setVisible(true);
     }
     
     public void Clear(){

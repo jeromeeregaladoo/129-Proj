@@ -2,7 +2,9 @@ package PresentationPanels;
 
 import DataStructs.Buyer;
 import DataStructs.Lot;
+import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 
 public class RowPresentation extends PresentationPrototype {
@@ -10,10 +12,12 @@ public class RowPresentation extends PresentationPrototype {
     public RowPresentation() {
         super();
         initComponents();
+        this.setBackground(Color.decode("#FFFFFF"));
+        this.setBorder(BorderFactory.createLineBorder(Color.decode("#000000"), 2));
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        this.setSize(new Dimension(600,600));
-        this.setMaximumSize(new Dimension(600,600));
-        this.setPreferredSize(new Dimension(600,600));
+        this.setSize(new Dimension(604,604));
+        this.setMaximumSize(new Dimension(604,604));
+        this.setPreferredSize(new Dimension(604,604));
     }
 
     
@@ -29,7 +33,7 @@ public class RowPresentation extends PresentationPrototype {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
