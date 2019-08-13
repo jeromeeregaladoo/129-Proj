@@ -6,7 +6,7 @@
 package cs129l.pkgfinal.project.SearchFunctions;
 
 import PresentationPanels.RowPresentation;
-import cs129l.pkgfinal.project.Buyer;
+import DataStructs.Buyer;
 import cs129l.pkgfinal.project.SQLConn;
 import java.awt.Component;
 import java.util.ArrayList;

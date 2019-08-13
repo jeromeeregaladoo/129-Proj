@@ -1,4 +1,6 @@
 package cs129l.pkgfinal.project;
+import DataStructs.Lot;
+import Rows_and_UIs.LotRow;
 import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.Box;

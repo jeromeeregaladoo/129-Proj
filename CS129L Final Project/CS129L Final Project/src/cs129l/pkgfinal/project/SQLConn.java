@@ -1,4 +1,7 @@
 package cs129l.pkgfinal.project;
+import DataStructs.Block;
+import DataStructs.Buyer;
+import DataStructs.Lot;
 import java.sql.*;
 import java.util.ArrayList;
 public class SQLConn {

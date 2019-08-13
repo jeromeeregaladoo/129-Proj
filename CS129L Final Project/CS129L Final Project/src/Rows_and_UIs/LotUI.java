@@ -1,5 +1,7 @@
-package cs129l.pkgfinal.project;
+package Rows_and_UIs;
 
+import DataStructs.Lot;
+import cs129l.pkgfinal.project.SQLConn;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.awt.Component;

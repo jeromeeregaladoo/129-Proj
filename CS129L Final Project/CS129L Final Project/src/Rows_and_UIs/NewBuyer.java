@@ -1,4 +1,7 @@
-package cs129l.pkgfinal.project;
+package Rows_and_UIs;
+
+import cs129l.pkgfinal.project.SQLConn;
+
 public class NewBuyer extends javax.swing.JFrame {
         SQLConn CEEEE;
         String ohgodohfuckhelpmelord ="";

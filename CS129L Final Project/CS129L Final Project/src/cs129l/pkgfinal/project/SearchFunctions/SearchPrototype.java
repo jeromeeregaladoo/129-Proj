@@ -36,16 +36,15 @@ public class SearchPrototype extends javax.swing.JPanel {
     public String generateSubCond(String query, String cond, javax.swing.JTextField a)
     {
         String text = a.getText(); //paramter passing unmodified to retain compatibility, refactor too expensive
-        String subcond="";
         
         if(!text.isEmpty())
         {
         if(!query.contains(" WHERE"))
         {query+=" WHERE";}
         
-        subcond+=cond + text +" AND";
+        return cond + " '"+ text +"'" +" AND";
         }
-        return subcond;
+        return "";
     }
     
     public String generateSubCond(String query, String cond, javax.swing.JTextField min, javax.swing.JTextField max)

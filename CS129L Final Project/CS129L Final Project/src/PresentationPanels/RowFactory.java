@@ -5,8 +5,8 @@
  */
 package PresentationPanels;
 
-import cs129l.pkgfinal.project.Lot;
-import cs129l.pkgfinal.project.LotRow;
+import Rows_and_UIs.LotRow;
+import DataStructs.Lot;
 import javax.swing.JPanel;
 
 /**
@@ -20,6 +20,7 @@ public class RowFactory {
 public JPanel BuildRow(Object obj){
         if( obj instanceof Lot){
             Lot lot = Lot.class.cast(obj);
+            System.out.println("lot casted in buildrow");
             return (new LotRow(lot));
         }/*else if(obj instanceof Buyer){
             Buyer buyer = Buyer.class.cast(obj);

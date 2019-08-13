@@ -1,11 +1,16 @@
 package PresentationPanels;
 
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
 
 public class PresentationPrototype extends javax.swing.JPanel {
 
     public PresentationPrototype() {
         initComponents();
+        this.setVisible(true);
+        this.setBackground(Color.decode("#FFFFFF"));
+        this.setBorder(BorderFactory.createLineBorder(Color.decode("#000000"), 2));
     }
     
     public void Clear(){

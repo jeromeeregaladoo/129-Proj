@@ -1,12 +1,19 @@
 package PresentationPanels;
 
-import cs129l.pkgfinal.project.Buyer;
-import cs129l.pkgfinal.project.Lot;
+import DataStructs.Buyer;
+import DataStructs.Lot;
+import java.awt.Dimension;
+import javax.swing.BoxLayout;
 
 public class RowPresentation extends PresentationPrototype {
     public RowFactory factory = new RowFactory();
     public RowPresentation() {
+        super();
         initComponents();
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setSize(new Dimension(600,600));
+        this.setMaximumSize(new Dimension(600,600));
+        this.setPreferredSize(new Dimension(600,600));
     }
 
     
@@ -18,11 +25,11 @@ public class RowPresentation extends PresentationPrototype {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 623, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
