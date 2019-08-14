@@ -13,6 +13,10 @@ public class MainFrame extends javax.swing.JFrame {
         this.setPreferredSize(new Dimension(1280,600));
         this.setBackground(Color.decode("#D6D9DF"));
         this.setVisible(true);
+       
+        //SearchPanel.setLayout(new BoxLayout(SearchPanel, BoxLayout.X_AXIS));
+        System.out.println("PresentationPanel layoutmanager =" + SearchPanel.getLayout().toString());
+       
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

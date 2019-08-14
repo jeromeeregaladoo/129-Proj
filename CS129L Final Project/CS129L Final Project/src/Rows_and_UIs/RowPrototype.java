@@ -15,6 +15,7 @@ public class RowPrototype extends javax.swing.JPanel {
         this.setMaximumSize(new Dimension(600,24));
         this.setPreferredSize(new Dimension(600,24));
         this.setBorder(BorderFactory.createLineBorder(Color.decode("#C0C0C0"), 1));
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -29,17 +30,7 @@ public class RowPrototype extends javax.swing.JPanel {
                 formMouseExited(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 24, Short.MAX_VALUE)
-        );
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited

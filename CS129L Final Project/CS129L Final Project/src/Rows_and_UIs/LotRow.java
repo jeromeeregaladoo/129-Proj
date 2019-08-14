@@ -1,12 +1,17 @@
 package Rows_and_UIs;
 import DataStructs.Lot;
 import java.awt.Dimension;
+import javax.swing.BoxLayout;
 public class LotRow extends RowPrototype {
         Lot lot;
     public LotRow(Lot lot) {
         super();
         this.lot = lot;
         initComponents();
+        //this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        this.setSize(new Dimension(604,24));
+        this.setMaximumSize(new Dimension(604,24));
+        this.setPreferredSize(new Dimension(604,24));
         this.setVisible(true);
     }
     @SuppressWarnings("unchecked")
@@ -43,10 +48,11 @@ public class LotRow extends RowPrototype {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        javax.swing.JFrame extensible = new javax.swing.JFrame();
+        /*javax.swing.JFrame extensible = new javax.swing.JFrame();
         extensible.setVisible(true);
         extensible.setSize(600, 450);
-        extensible.add(new LotUI(lot));
+        extensible.add(new LotUI(lot));*/
+        this.setVisible(false);
     }//GEN-LAST:event_formMouseClicked
 
 

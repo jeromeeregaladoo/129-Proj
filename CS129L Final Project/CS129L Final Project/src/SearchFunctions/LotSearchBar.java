@@ -4,7 +4,9 @@ package SearchFunctions;
 import PresentationPanels.RowPresentation;
 import DataStructs.Lot;
 import cs129l.pkgfinal.project.SQLConn;
+import java.awt.Component;
 import java.util.ArrayList;
+import javax.swing.Box;
 
 public class LotSearchBar extends SearchPrototype {
     
@@ -38,13 +40,41 @@ public class LotSearchBar extends SearchPrototype {
     }
     
     private void addToPanel(ArrayList<Lot> list){
+        
+        /*
         Panel.Clear();
-        for (int n=1; n<list.size(); n++){
+        for (int n=0; n<list.size(); n++)
+        {
             Panel.add(Panel.factory.BuildRow(list.get(n)));
-            //System.out.println("BuildRow proc firing on lot code "+ list.get(n).getLotCode());
+            System.out.println("BuildRow proc firing on lot code "+ list.get(n).getLotCode());
         }
+        
+        Panel.add(Box.createVerticalStrut(100));
+        
+        
         Panel.revalidate();
         Panel.repaint();
+        */
+        
+        Panel.Clear();
+        int m=0;
+        for (int n=0; n<list.size(); n++){
+            //System.out.println(Panel.factory.BuildRow(list.get(n)));
+            Panel.AddRow(list.get(n));
+            
+            //System.out.println("BuildRow proc firing on lot code "+ list.get(n).getLotCode());
+            
+        }
+        /*
+        Component[] components = Panel.getComponents();
+        
+        for (Component component : components) {
+            m++;
+        }
+        System.out.println("m="+m);*/
+        Panel.revalidate();
+        Panel.repaint();
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

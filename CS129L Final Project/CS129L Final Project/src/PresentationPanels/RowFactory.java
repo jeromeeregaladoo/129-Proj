@@ -20,7 +20,6 @@ public class RowFactory {
 public JPanel BuildRow(Object obj){
         if( obj instanceof Lot){
             Lot lot = Lot.class.cast(obj);
-            System.out.println("lot casted in buildrow");
             return (new LotRow(lot));
         }/*else if(obj instanceof Buyer){
             Buyer buyer = Buyer.class.cast(obj);

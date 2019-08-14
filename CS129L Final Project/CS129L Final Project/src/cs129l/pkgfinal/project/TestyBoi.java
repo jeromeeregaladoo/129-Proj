@@ -5,10 +5,14 @@
  */
 package cs129l.pkgfinal.project;
 
+import DataStructs.Lot;
 import PresentationPanels.LotSearchPanel;
 import PresentationPanels.RowPresentation;
+import Rows_and_UIs.LotRow;
 import SearchFunctions.LotSearchBar;
 import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -20,7 +24,7 @@ public class TestyBoi extends javax.swing.JFrame {
      * Creates new form TestyBoi
      */
     public TestyBoi() {
-        initComponents();
+        initComponents();/*
         this.setLayout(new FlowLayout());
         this.setSize(1080, 720);
         this.setVisible(true);
@@ -28,7 +32,26 @@ public class TestyBoi extends javax.swing.JFrame {
         SQLConn c = new SQLConn();
         //this.add(new LotSearchPanel(c));
         this.add(new LotSearchBar(test1,c ));
-        this.add(test1);
+        this.add(test1);*/
+        JPanel testy = new JPanel();
+        testy.setSize(1080, 720);
+        testy.setVisible(true);
+        JPanel fucker1 = new JPanel();
+        fucker1.setSize(1000,700);
+        fucker1.setVisible(true);
+        testy.setLayout(new BoxLayout(testy, BoxLayout.Y_AXIS));
+        fucker1.setLayout(new BoxLayout(fucker1, BoxLayout.Y_AXIS));
+        Lot temp = new Lot("A,B,C,D,1,2");
+        fucker1.add(new LotRow(temp));
+        fucker1.add(new LotRow(temp));
+        fucker1.add(new LotRow(temp));
+        fucker1.add(new LotRow(temp));
+        testy.add(fucker1);
+        testy.add(fucker1);
+        testy.add(new LotRow(temp));
+        this.add(testy);
+        
+        System.out.println("RULE BRITANNIA: "+testy.getLayout().toString());
     }
 
     /**

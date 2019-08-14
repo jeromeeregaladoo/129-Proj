@@ -2,17 +2,22 @@ package PresentationPanels;
 
 import cs129l.pkgfinal.project.SQLConn;
 import java.awt.Component;
+import javax.swing.BoxLayout;
 
 public class PresentationPrototype extends javax.swing.JPanel {
     SQLConn c;
     
     public PresentationPrototype() {
         this.c=null;
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         initComponents();
         this.setVisible(true);
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        System.out.println("Presentation Prototype layout manager "+this.getLayout().toString());
     }
     public PresentationPrototype(SQLConn c) {
         this.c=c;
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         initComponents();
         this.setVisible(true);
     }
