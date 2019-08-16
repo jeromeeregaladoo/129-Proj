@@ -10,29 +10,33 @@ import java.awt.FlowLayout;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 
 public class RowPresentation extends PresentationPrototype {
     public RowFactory factory = new RowFactory();
     
-        JPanel testy = new JPanel();
+        
+    //private JPanel testy = new JPanel();
+    JTable table = new JTable();
     public RowPresentation() {
-        //Did you set the area which is the container? 6:45 
-        //I don't think it's the Layout Manager 6:57
         super();
-        //this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        this.setLayout(new FlowLayout());
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBackground(Color.decode("#FFFFFF"));
         this.setBorder(BorderFactory.createLineBorder(Color.decode("#000000"), 2));
         this.setSize(new Dimension(604,604));
         this.setMaximumSize(new Dimension(604,604));
         this.setPreferredSize(new Dimension(604,604));
-        testy.setSize(1080, 720);
-        testy.setVisible(true);
-        testy.setLayout(new BoxLayout(testy, BoxLayout.Y_AXIS));
+        //testy.setSize(1080, 720);
+        //testy.setVisible(true);
+        //testy.setLayout(new BoxLayout(testy, BoxLayout.Y_AXIS));
         Lot temp = new Lot("A,B,C,D,1,2");
-        testy.add(new LotRow(temp));
+        table.add(new LotRow(temp));
         //this.add(new LotRow(temp));
-        this.add(testy);
+        //this.add(testy);
+        table.setVisible(true);
+        table.setSize(600,600);
+        table.setRowHeight(60);
+        this.add(table);
     }
     
     public void AddRow(Object obj){

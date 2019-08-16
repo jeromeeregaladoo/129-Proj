@@ -15,7 +15,6 @@ public class RowPrototype extends javax.swing.JPanel {
         this.setMaximumSize(new Dimension(600,24));
         this.setPreferredSize(new Dimension(600,24));
         this.setBorder(BorderFactory.createLineBorder(Color.decode("#C0C0C0"), 1));
-        
     }
 
     @SuppressWarnings("unchecked")
