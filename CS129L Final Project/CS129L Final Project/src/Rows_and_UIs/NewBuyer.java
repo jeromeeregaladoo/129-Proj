@@ -3,10 +3,10 @@ package Rows_and_UIs;
 import cs129l.pkgfinal.project.SQLConn;
 
 public class NewBuyer extends javax.swing.JFrame {
-        SQLConn CEEEE;
-        String ohgodohfuckhelpmelord ="";
+        SQLConn CEEEE = new SQLConn();
+        String halp ="";
     public NewBuyer(String halp) {
-        this.ohgodohfuckhelpmelord=halp;
+        this.halp=halp;
         initComponents();
     }
 
@@ -152,12 +152,17 @@ public class NewBuyer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        CEEEE.executeUpdate("INSERT INTO BUYER VALUES(\""+jTextField1+"\",\""+jTextField2+"\",\""+jTextField3+"\",\""+jTextField4+"\",\""+jTextField5+"\",\""+jTextField6+"\",\""+jTextField7+"\",\""+jTextField8+"\","+jTextField9+");");
-        CEEEE.executeUpdate("UPDATE LOT SET BUYER_CODE="+jTextField1+" WHERE LOT_CODE="+ohgodohfuckhelpmelord);
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        String query = "INSERT INTO BUYER VALUES(\""+jTextField1.getText()+"\",\""+jTextField2.getText()+"\",\""+jTextField3.getText()+"\",\""+jTextField4.getText()+"\",\""
+                +jTextField5.getText()+"\",\""+jTextField6.getText()+"\",\""+jTextField7.getText()+"\",\""+jTextField8.getText()+"\","+jTextField9.getText()+")";
+        System.out.println(query);
+        CEEEE.executeUpdate(query);
+        query ="UPDATE LOT SET BUYER_CODE="+jTextField1.getText()+" WHERE LOT_CODE="+halp;
+        System.out.println(query);
+        CEEEE.executeUpdate(query);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -10,7 +10,7 @@ import Rows_and_UIs.BuyerRow;
 
 
 public class BaseTester extends javax.swing.JFrame {
-    JTable test = new JTable();
+    //JTable test = new JTable();
     /*
     public BaseTester() {
         initComponents();

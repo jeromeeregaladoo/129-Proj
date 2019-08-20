@@ -176,7 +176,7 @@ public class LotUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        javax.swing.JFrame extensible = new NewBuyer();
+        javax.swing.JFrame extensible = new NewBuyer(lot.getLotCode());
         extensible.setVisible(true);
         extensible.setSize(400, 300);
     }//GEN-LAST:event_jButton1ActionPerformed
