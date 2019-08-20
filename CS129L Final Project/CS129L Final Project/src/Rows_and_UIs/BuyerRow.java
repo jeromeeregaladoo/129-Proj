@@ -7,6 +7,9 @@ public class BuyerRow extends RowPrototype {
         super();
         this.b = b;
         initComponents();
+        this.setSize(new Dimension(604,24));
+        this.setMaximumSize(new Dimension(604,24));
+        this.setPreferredSize(new Dimension(604,24));
         this.setVisible(true);
     }
     @SuppressWarnings("unchecked")

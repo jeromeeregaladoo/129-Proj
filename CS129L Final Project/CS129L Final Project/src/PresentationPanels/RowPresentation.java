@@ -17,7 +17,7 @@ public class RowPresentation extends PresentationPrototype {
     
         
     //private JPanel testy = new JPanel();
-    JTable table = new JTable();
+    //JTable table = new JTable();
     public RowPresentation() {
         super();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -29,14 +29,14 @@ public class RowPresentation extends PresentationPrototype {
         //testy.setSize(1080, 720);
         //testy.setVisible(true);
         //testy.setLayout(new BoxLayout(testy, BoxLayout.Y_AXIS));
-        Lot temp = new Lot("A,B,C,D,1,2");
-        table.add(new LotRow(temp));
+        //Lot temp = new Lot("A,B,C,D,1,2");
+        //table.add(new LotRow(temp));
         //this.add(new LotRow(temp));
         //this.add(testy);
-        table.setVisible(true);
-        table.setSize(600,600);
-        table.setRowHeight(60);
-        this.add(table);
+        //table.setVisible(true);
+        //table.setSize(600,600);
+        //table.setRowHeight(60);
+        //this.add(table);
     }
     
     public void AddRow(Object obj){

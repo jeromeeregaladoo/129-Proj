@@ -3,16 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cs129l.pkgfinal.project;
+package TestChamber;
 
 import DataStructs.Lot;
 import PresentationPanels.LotSearchPanel;
 import PresentationPanels.RowPresentation;
 import Rows_and_UIs.LotRow;
 import SearchFunctions.LotSearchBar;
+import java.awt.Component;
 import java.awt.FlowLayout;
+import java.util.EventObject;
+import java.util.Vector;
+import javax.swing.AbstractCellEditor;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -24,36 +32,75 @@ public class TestyBoi extends javax.swing.JFrame {
      * Creates new form TestyBoi
      */
     public TestyBoi() {
-        initComponents();/*
-        this.setLayout(new FlowLayout());
+        initComponents();
+        
+        Lot temp = new Lot("A,B,C,D,1,2");
+        JTable test = new JTable();
+        test.setVisible(true);
+        test.setSize(600,400);
+        
+        DefaultTableModel dm = new DefaultTableModel(0,1);
+        test.setModel(dm);
+        TestRowRendererEditor rend = new TestRowRendererEditor();
+        test.setDefaultRenderer(LotRow.class, rend);
+        test.setDefaultEditor(LotRow.class, rend);
+        dm.addRow(new Object[]{new LotRow(temp)});
+        test.setRowHeight(60);
+        
+        this.add(test);
         this.setSize(1080, 720);
         this.setVisible(true);
-        RowPresentation test1 = new RowPresentation();
-        SQLConn c = new SQLConn();
-        //this.add(new LotSearchPanel(c));
-        this.add(new LotSearchBar(test1,c ));
-        this.add(test1);*/
-        JPanel testy = new JPanel();
-        testy.setSize(1080, 720);
-        testy.setVisible(true);
-        JPanel fucker1 = new JPanel();
-        fucker1.setSize(1000,700);
-        fucker1.setVisible(true);
-        testy.setLayout(new BoxLayout(testy, BoxLayout.Y_AXIS));
-        fucker1.setLayout(new BoxLayout(fucker1, BoxLayout.Y_AXIS));
-        Lot temp = new Lot("A,B,C,D,1,2");
-        fucker1.add(new LotRow(temp));
-        fucker1.add(new LotRow(temp));
-        fucker1.add(new LotRow(temp));
-        fucker1.add(new LotRow(temp));
-        testy.add(fucker1);
-        testy.add(fucker1);
-        testy.add(new LotRow(temp));
-        this.add(testy);
-        
-        System.out.println("RULE BRITANNIA: "+testy.getLayout().toString());
+    }
+    
+    public class TestRowRendererEditor extends AbstractCellEditor implements TableCellRenderer, TableCellEditor{
+    
+    Lot temp = new Lot("A,B,C,D,1,2");
+    LotRow row = new LotRow(temp);
+    private LotRow renderer = new LotRow(temp);
+    private LotRow editor = new LotRow(temp);
+
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+        renderer = new LotRow ((Lot) value);
+        return new LotRow(temp);
     }
 
+    @Override
+    public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+        editor = new LotRow((Lot) value);
+        return new LotRow(temp);
+    }
+
+    @Override
+    public Object getCellEditorValue() {
+        return editor;
+    }
+
+    @Override
+    public boolean isCellEditable(EventObject anEvent) {
+        return true;
+    }
+
+    @Override
+    public boolean shouldSelectCell(EventObject anEvent) {
+        return false;
+    }
+    }
+    
+    class PanelTableModel extends DefaultTableModel {
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public int getColumnCount() {
+        return 1;
+    }
+
+    public void addRow() {
+        super.addRow(new Object[]{new LotRow(0, 0, "", "")});
+    }
+}
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

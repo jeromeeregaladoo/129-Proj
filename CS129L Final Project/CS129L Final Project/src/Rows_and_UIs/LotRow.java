@@ -48,11 +48,11 @@ public class LotRow extends RowPrototype {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        /*javax.swing.JFrame extensible = new javax.swing.JFrame();
+        javax.swing.JFrame extensible = new javax.swing.JFrame();
         extensible.setVisible(true);
         extensible.setSize(600, 450);
-        extensible.add(new LotUI(lot));*/
-        this.setVisible(false);
+        extensible.add(new LotUI(lot));
+        //this.setVisible(false);
     }//GEN-LAST:event_formMouseClicked
 
 

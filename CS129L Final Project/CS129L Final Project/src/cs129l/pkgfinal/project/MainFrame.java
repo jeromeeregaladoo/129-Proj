@@ -1,4 +1,5 @@
 package cs129l.pkgfinal.project;
+import PresentationPanels.BuyerSearchPanel;
 import PresentationPanels.LotSearchPanel;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -15,7 +16,7 @@ public class MainFrame extends javax.swing.JFrame {
         this.setVisible(true);
        
         //SearchPanel.setLayout(new BoxLayout(SearchPanel, BoxLayout.X_AXIS));
-        System.out.println("PresentationPanel layoutmanager =" + SearchPanel.getLayout().toString());
+        //System.out.println("PresentationPanel layoutmanager =" + SearchPanel.getLayout().toString());
        
     }
     @SuppressWarnings("unchecked")
@@ -43,7 +44,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGap(0, 480, Short.MAX_VALUE)
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Search Lots", "Search Blocks", "Search Buyers"}));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Search Lots", "Search Buyers"}));
 
         jLabel1.setText("Select Search Method");
 
@@ -92,18 +93,20 @@ public class MainFrame extends javax.swing.JFrame {
                 SearchPanel.add(new LotSearchPanel(c));
                 SearchPanel.revalidate();
                 SearchPanel.repaint();
+                break;
             }
             case 1:{
                 SearchPanel.removeAll();
-                SearchPanel.add(new LotSearchPanel(c));
+                SearchPanel.add(new BuyerSearchPanel(c));
                 SearchPanel.revalidate();
                 SearchPanel.repaint();
+                break;
             }
-            case 2:{
+            case 2: {
                 SearchPanel.removeAll();
-                SearchPanel.add(new LotSearchPanel(c));
                 SearchPanel.revalidate();
                 SearchPanel.repaint();
+                break;
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

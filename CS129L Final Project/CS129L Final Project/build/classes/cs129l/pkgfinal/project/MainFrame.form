@@ -88,7 +88,7 @@
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;Search Lots&quot;, &quot;Search Blocks&quot;, &quot;Search Buyers&quot;})" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;Search Lots&quot;, &quot;Search Buyers&quot;})" type="code"/>
         </Property>
       </Properties>
     </Component>

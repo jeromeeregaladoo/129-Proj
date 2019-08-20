@@ -42,7 +42,7 @@ public class SearchPrototype extends javax.swing.JPanel {
         if(!query.contains(" WHERE"))
         {query+=" WHERE";}
         
-        return cond + " '"+ text +"'" +" AND";
+        return cond + " '%"+ text +"%'" +" AND";
         }
         return "";
     }

@@ -1,6 +1,7 @@
 package DataStructs;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 public class Buyer {
         private String buyerCode, fName, lName, midInit, mName, cpNum, telNum, email;
         private int age;
@@ -10,7 +11,7 @@ public class Buyer {
     }    
         
     public Buyer(String rawData){
-    ArrayList<String> dataList = (ArrayList<String>)Arrays.asList(rawData.split(","));
+    List<String> dataList = new ArrayList<String>(Arrays.asList(rawData.split(",")));
     buyerCode=dataList.get(0);
     fName=dataList.get(1);
     lName=dataList.get(2);

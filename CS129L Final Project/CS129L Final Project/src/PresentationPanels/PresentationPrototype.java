@@ -13,7 +13,7 @@ public class PresentationPrototype extends javax.swing.JPanel {
         initComponents();
         this.setVisible(true);
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        System.out.println("Presentation Prototype layout manager "+this.getLayout().toString());
+        //System.out.println("Presentation Prototype layout manager "+this.getLayout().toString());
     }
     public PresentationPrototype(SQLConn c) {
         this.c=c;
