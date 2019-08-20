@@ -13,6 +13,7 @@ public class LotUI extends javax.swing.JPanel {
     public LotUI(Lot lot) {
         this.lot = lot;
         initComponents();
+        System.out.println(lot.getBuyerCode());
         if (lot.getBuyerCode().isEmpty()||lot.getBuyerCode().equals("")||lot.getBuyerCode()==null||lot.getBuyerCode().equals("NULL")){
         jButton1.setVisible(true);
         }else{
@@ -47,9 +48,11 @@ public class LotUI extends javax.swing.JPanel {
         jLabel7.setText("Owner:");
 
         String buyer="";
-        if (lot.getBuyerCode().isEmpty()){
+        if (lot.getBuyerCode().isEmpty()||lot.getBuyerCode().equals("")||lot.getBuyerCode()==null||lot.getBuyerCode().equals("NULL")){
             buyer="Yours to Own!";
             jButton1.setVisible(false);
+        }else{
+            buyer = lot.getBuyerCode();
         }
         jLabel8.setText(buyer);
 

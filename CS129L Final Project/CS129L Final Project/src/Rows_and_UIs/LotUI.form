@@ -130,7 +130,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String buyer=&quot;&quot;;&#xa;if (lot.getBuyerCode().isEmpty()){&#xa;buyer=&quot;Yours to Own!&quot;;&#xa;jButton1.setVisible(false);&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String buyer=&quot;&quot;;&#xa;if (lot.getBuyerCode().isEmpty()||lot.getBuyerCode().equals(&quot;&quot;)||lot.getBuyerCode()==null||lot.getBuyerCode().equals(&quot;NULL&quot;)){&#xa;buyer=&quot;Yours to Own!&quot;;&#xa;jButton1.setVisible(false);&#xa;}else{&#xa;buyer = lot.getBuyerCode();&#xa;}"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
