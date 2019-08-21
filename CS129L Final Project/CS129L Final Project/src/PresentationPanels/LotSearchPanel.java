@@ -33,6 +33,8 @@ public class LotSearchPanel extends PresentationPrototype {
 
         RowPresenter.setLayout(new javax.swing.BoxLayout(RowPresenter, javax.swing.BoxLayout.LINE_AXIS));
 
+        RowPresenter.setLayout(new javax.swing.BoxLayout(RowPresenter, javax.swing.BoxLayout.Y_AXIS));
+
         jLabel1.setText("Lot Code");
 
         jLabel2.setText("Block Code");

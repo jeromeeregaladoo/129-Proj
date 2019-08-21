@@ -26,22 +26,18 @@ public class BuyerSearchPanel extends PresentationPrototype {
         RowPresenter = new PresentationPanels.RowPresentation();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         buyerSearchBar1 = new SearchFunctions.BuyerSearchBar(RowPresenter,c);
 
         RowPresenter.setLayout(new javax.swing.BoxLayout(RowPresenter, javax.swing.BoxLayout.LINE_AXIS));
 
+        RowPresenter.setLayout(new javax.swing.BoxLayout(RowPresenter, javax.swing.BoxLayout.Y_AXIS));
+
         jLabel1.setText("Buyer Code");
 
-        jLabel2.setText("Block Code");
+        jLabel2.setText("Name");
 
-        jLabel3.setText("Description");
-
-        jLabel4.setText("Cost per SQM");
-
-        jLabel5.setText("Total Cost");
+        jLabel4.setText("Contact Details");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -54,12 +50,9 @@ public class BuyerSearchPanel extends PresentationPrototype {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
+                        .addGap(190, 190, 190)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(130, 130, 130))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addComponent(buyerSearchBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -75,9 +68,7 @@ public class BuyerSearchPanel extends PresentationPrototype {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(RowPresenter, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -92,8 +83,6 @@ public class BuyerSearchPanel extends PresentationPrototype {
     private SearchFunctions.BuyerSearchBar buyerSearchBar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

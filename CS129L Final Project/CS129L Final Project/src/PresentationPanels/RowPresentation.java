@@ -41,6 +41,8 @@ public class RowPresentation extends PresentationPrototype {
     
     public void AddRow(Object obj){
         this.add(factory.BuildRow(obj), BorderLayout.NORTH);
+        this.revalidate();
+        this.repaint();
     }
 
     
