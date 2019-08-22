@@ -3,14 +3,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class Block {
     private String blockCode, blockName, blockDesc;
-    //ArrayList<String> utilsCode; This will only bring suffering when implemented. Great idea, but terrible in practice
-    //private ArrayList<Lot> lots; //wondering whether I should remove this
-    // add image to GUI, best of luck
 
     public Block(String rawData){
     ArrayList<String> dataList = (ArrayList<String>)Arrays.asList(rawData.split(","));
     blockCode=dataList.get(0);
-    blockName=dataList.get(1); //should I just deprecate this?
+    blockName=dataList.get(1); 
     blockDesc=dataList.get(2);
     }
     

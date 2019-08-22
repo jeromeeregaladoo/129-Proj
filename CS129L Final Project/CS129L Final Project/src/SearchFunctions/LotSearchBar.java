@@ -41,7 +41,6 @@ public class LotSearchBar extends SearchPrototype {
     private void addToPanel(ArrayList<Lot> list){
         
         Panel.Clear();
-        int m=0;
         for (int n=0; n<list.size(); n++){
             //System.out.println(Panel.factory.BuildRow(list.get(n)));
             Panel.AddRow(list.get(n));

@@ -59,6 +59,7 @@ public class SQLConn {
             st=c.createStatement();
             t = st.executeQuery(query);
             while (t.next()){
+            temp = new Block();
             temp.setBlockCode(t.getString(1));
             temp.setBlockName(t.getString(2));
             temp.setBlockDesc(t.getString(3));
@@ -83,6 +84,7 @@ public class SQLConn {
             st=c.createStatement();
             t = st.executeQuery(query);
             while (t.next()){
+            temp = new Buyer();
             temp.setBuyerCode(t.getString(1));
             temp.setfName(t.getString(2));
             temp.setlName(t.getString(3));

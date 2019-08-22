@@ -6,11 +6,9 @@ import Rows_and_UIs.LotRow;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.JPanel;
-import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class RowPresentation extends PresentationPrototype {
     public RowFactory factory = new RowFactory();
@@ -22,21 +20,12 @@ public class RowPresentation extends PresentationPrototype {
         super();
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBackground(Color.decode("#FFFFFF"));
-        this.setBorder(BorderFactory.createLineBorder(Color.decode("#000000"), 2));
+        this.setBorder(BorderFactory.createLineBorder(Color.decode("#000000"), 2));/*
         this.setSize(new Dimension(604,604));
         this.setMaximumSize(new Dimension(604,604));
-        this.setPreferredSize(new Dimension(604,604));
-        //testy.setSize(1080, 720);
-        //testy.setVisible(true);
-        //testy.setLayout(new BoxLayout(testy, BoxLayout.Y_AXIS));
-        //Lot temp = new Lot("A,B,C,D,1,2");
-        //table.add(new LotRow(temp));
-        //this.add(new LotRow(temp));
-        //this.add(testy);
-        //table.setVisible(true);
-        //table.setSize(600,600);
-        //table.setRowHeight(60);
-        //this.add(table);
+        this.setPreferredSize(new Dimension(604,604));*/
+        //this.add(scroller, BorderLayout.WEST);\
+       
     }
     
     public void AddRow(Object obj){

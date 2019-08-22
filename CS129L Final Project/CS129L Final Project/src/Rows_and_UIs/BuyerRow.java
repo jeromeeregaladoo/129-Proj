@@ -31,7 +31,7 @@ public class BuyerRow extends RowPrototype {
         add(Code, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 20));
 
         ContactDetails.setText(b.getTelNum()+"   "+b.getEmail());
-        add(ContactDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 200, 20));
+        add(ContactDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 250, 20));
 
         Name.setText(b.getfName()+" "+b.getmName()+" "+b.getlName());
         add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 300, 20));

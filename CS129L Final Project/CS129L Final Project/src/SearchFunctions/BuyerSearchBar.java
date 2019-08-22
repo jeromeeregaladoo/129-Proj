@@ -38,10 +38,9 @@ public class BuyerSearchBar extends SearchPrototype {
         
         Panel.Clear();
         for (int n=0; n<list.size(); n++){
-            //System.out.println(Panel.factory.BuildRow(list.get(n)));
-            System.out.println("Executing for row "+ n + " of " + list.size());
+            System.out.println("Executing for row "+ n+1 + " of " + list.size());
             Panel.AddRow(list.get(n));
-            //System.out.println("BuildRow proc firing on lot code "+ list.get(n).getLotCode());
+            System.out.println("BuildRow proc firing on buyer code "+ list.get(n).getBuyerCode());
             
         }
         Panel.revalidate();
@@ -52,9 +51,6 @@ public class BuyerSearchBar extends SearchPrototype {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField3 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
         SearchButton = new javax.swing.JButton();
         BuyerCode = new javax.swing.JTextField();
         CellphoneNumber = new javax.swing.JTextField();
@@ -68,12 +64,6 @@ public class BuyerSearchBar extends SearchPrototype {
         jLabel12 = new javax.swing.JLabel();
         FirstName = new javax.swing.JTextField();
         LastName = new javax.swing.JTextField();
-
-        jTextField3.setText("jTextField3");
-
-        jTextField13.setText("jTextField7");
-
-        jTextField14.setText("jTextField7");
 
         SearchButton.setText("Search");
         SearchButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -176,8 +166,5 @@ public class BuyerSearchBar extends SearchPrototype {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
